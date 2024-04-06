@@ -16,12 +16,12 @@ contract LawrenceToken is ERC20 {
         return true;
     }
 
-    function burn(uint256 amount) public {
-        _burn(msg.sender, amount);
-    }
-
     function mint(address to, uint256 amount) public {
         require(msg.sender == owner, "Only owner can mint");
         _mint(to, amount);
+    }
+
+    function burn(uint256 amount) public {
+        _burn(msg.sender, amount);
     }
 }
